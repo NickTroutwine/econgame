@@ -7,14 +7,19 @@
     "test": "test"
   },
   "dependencies": {
+    "body-parser": "^1.13.3",
+    "cheerio": "^0.19.0",
     "express": "^4.12.4",
+    "lodash": "^3.9.3",
     "mocha": "^2.2.5",
+    "mongoose": "^4.0.7",
+    "request": "^2.55.0",
     "superagent": "^1.2.0",
     "supertest": "^1.0.1"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node server/server.js",
+    "start": "nodemon server/server.js",
     "test": "./node_modules/mocha/bin/mocha"
   },
   "engines": {

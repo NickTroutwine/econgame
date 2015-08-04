@@ -7,8 +7,10 @@ angular.module('main', [
   $stateProvider
     .state('home', {
       url: '/',
-      templateUrl: 'pages/home.html'
-    })
+      templateUrl: 'pages/home.html',
+      controller: "NumController",
+      controllerAs: "numCtrl"
+    });
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode({
      enabled: true
