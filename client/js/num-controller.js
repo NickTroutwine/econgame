@@ -7,7 +7,7 @@ function NumController($http) {
   this.addUser  = function(){   
     var self = this;
     $http.post('/userguess', this.newUser).success(function(data, status, headers, config){
-    self.newUser = {username: '', numGuess: 0};
+    self.newUser = {username: '', numGuess: ''};
     }); 
   };
 }

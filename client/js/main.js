@@ -10,7 +10,11 @@ angular.module('main', [
       templateUrl: 'pages/home.html',
       controller: "NumController",
       controllerAs: "numCtrl"
-    });
+    })
+    .state('results', {
+      url:'/results',
+      templateUrl:'pages/results.html'
+    })
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode({
      enabled: true
