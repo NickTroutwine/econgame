@@ -13,6 +13,7 @@ var UserSchema = new Schema({
 });
 var User = mongoose.model('User', UserSchema);
 app.use(bodyParser.json());
+
 app.all('/',function(req,res,next){
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -23,6 +24,7 @@ app.post('/userguess', function (req, res){
   username: req.body.username,
 	numGuess: req.body.numGuess
   };
+  console.log('username:  ', req.body);
   var newUser = new User(options);
   console.log('new user: ', newUser);
   newUser.save(function (err){
@@ -36,10 +38,17 @@ app.post('/userguess', function (req, res){
 app.get('/usersguess ',function(req,res,next){
   User.find({},function(err,data){
     res.send(data);
+    console.log(data);
   })
 });
 
-
+// app.get('/results', function(req, res){
+  
+//   console.log('options2', options2);
+//   User.findOne({username: options2.username},function(err, user){
+    
+//   });
+// });
 app.use(express.static('client'));
 app.listen(process.env.PORT || 3000);
 module.exports = app;
