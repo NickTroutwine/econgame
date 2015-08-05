@@ -4,7 +4,7 @@ var path = require('path');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var Schema = mongoose.Schema;
-mongoose.connect('mongodb://stustan:stustan@ds063809.mongolab.com:63809/student-auth-app', function(err) {
+mongoose.connect('mongodb://econgame:econgame@ds059692.mongolab.com:59692/econgame', function(err) {
   if(err){return err;}});
 
 var UserSchema = new Schema({
@@ -12,7 +12,7 @@ var UserSchema = new Schema({
   numGuess: { type: Number, required: true},
 });
 var User = mongoose.model('User', UserSchema);
-
+app.use(bodyParser.json());
 app.all('/',function(req,res,next){
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -20,7 +20,7 @@ app.all('/',function(req,res,next){
 });
 app.post('/userguess', function (req, res){
   var options = {
-    username: req.body.username,
+  username: req.body.username,
 	numGuess: req.body.numGuess
   };
   var newUser = new User(options);
@@ -32,6 +32,11 @@ app.post('/userguess', function (req, res){
   	console.log('He has been saved');
   });
   res.json({name: newUser.username, guess: newUser.numGuess});
+});
+app.get('/usersguess ',function(req,res,next){
+  User.find({},function(err,data){
+    res.send(data);
+  })
 });
 
 
