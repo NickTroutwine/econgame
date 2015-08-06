@@ -1,6 +1,12 @@
 
-<h1>Hey there ;)</h1>
-
+<h1>Results</h1>
+<duv ng-bind-html-unsafe="players">Number of players {{players}}</div>
+	</br>
 <button ng-click="docsCtrl.getDocs()">Click for results yo</button>
-
+	</br>
 <div ng-repeat='result in searchResults'>{{result.node}}</div>
+
+<duv ng-bind-html-unsafe="sum">Winning number: {{sum}}</div>
+<div ng-bind-html-unsafe="winnerName">The Winner Is:  {{winnerName}}</div>
+<div ng-bind-html-unsafe="winnerGuess">With The Winning Number:  {{winnerGuess}}</div>
+
