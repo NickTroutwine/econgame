@@ -1,16 +1,16 @@
-<div class = 'row'>
-  <div class = 'col-sm-6'>
-    <h1 >EconGame</h1>
+<div class = 'row'style="color: #FFFF00; background-color: black; padding:0em 0.2em 0em 0.2em; display:inline-block; float: right">
+  <div class = 'col-xl-6'>
+    <h1>EconGame</h1>
     <h2>How to Play</h2>
-    <p>You are all inputing a number, and that number should be between 1 and 100. You collective guesses will be added up, and averaged. Your guess should be what you think that average divided by 2 will be.
+    <p>You're all inputing a number, and that number should be between 1 and 100. <br>Your collective guesses will be added up, and averaged. <br>Your guess should be what you think that average divided by 2 will be.
     </p>
   </div>
-  <div class = 'col-sm-6'>
-  <h2>Guess</h2>
+  <div class = 'col-xl-6'>
+  <h2>Test Your Logic</h2>
     <form ng-submit = "numCtrl.addUser()">
       <input type = 'text' ng-model="numCtrl.newUser.username" placeholder="Who ARE you..?"/><br>
-      <input type = 'number' ng-model="numCtrl.newUser.numGuess" placeholder="Guess"/><br>
-      <button>Guess</button><br>
+      <input type = 'number' max='100' ng-model="numCtrl.newUser.numGuess" placeholder="Guess"/><br>
+      <button style="color: black">Test Your Logic</button><br>
     </form>
   </div>
 </div>

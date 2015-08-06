@@ -13,7 +13,9 @@ angular.module('main', [
     })
     .state('results', {
       url:'/results',
-      templateUrl:'pages/results.html'
+      templateUrl:'pages/results.html',
+      controller: 'DocsController',
+      controllerAs: 'docsCtrl'
     })
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode({
