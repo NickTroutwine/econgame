@@ -9,7 +9,7 @@
   <h2>Guess</h2>
     <form ng-submit = "numCtrl.addUser()">
       <input type = 'text' ng-model="numCtrl.newUser.username" placeholder="Who ARE you..?"/><br>
-      <input type = 'number' ng-model="numCtrl.newUser.numGuess" placeholder="Guess"/><br>
+      <input type = 'number' max = '100' min = '1' ng-model="numCtrl.newUser.numGuess" placeholder="Guess"/><br>
       <button>Guess</button><br>
     </form>
   </div>

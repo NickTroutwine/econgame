@@ -19,6 +19,9 @@ app.all('/',function(req,res,next){
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next();
 });
+app.get('/results', function (req, res){
+  res.sendFile(path.join(__dirname, '/../client/index.html'));
+});
 app.post('/userguess', function (req, res){
   var options = {
   username: req.body.username,
