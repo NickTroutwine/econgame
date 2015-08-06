@@ -24,22 +24,22 @@ app.post('/userguess', function (req, res){
   username: req.body.username,
 	numGuess: req.body.numGuess
   };
-  console.log('username:  ', req.body);
+  // console.log('username:  ', req.body);
   var newUser = new User(options);
-  console.log('new user: ', newUser);
+  // console.log('new user: ', newUser);
   newUser.save(function (err){
   	if(err){
   	  throw err;
   	}
-  	console.log('He has been saved');
+  	// console.log('He has been saved');
   });
   res.json({name: newUser.username, guess: newUser.numGuess});
 });
-app.get('/usersguess ',function(req,res,next){
-  User.find({},function(err,data){
-    res.send(data);
-    console.log(data);
-  })
+app.get('/userguess',function(req,res,next){
+User.find({},function(err,data){
+  // console.log('should be DB data',data);
+  res.send(data);
+});
 });
 
 // app.get('/results', function(req, res){

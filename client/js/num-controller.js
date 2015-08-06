@@ -1,16 +1,15 @@
 angular.module('main').controller('NumController', NumController);
-NumController.$inject = ['$http', '$scope', '$state'];
+NumController.$inject = ['$http', '$state'];
 
-function NumController($http, $scope, $state) { 
+function NumController($http, $state) {
   this.newUser = {};
-
+  var self = this;
   this.addUser  = function(){   
-    var self = this;
-    console.log(this.newUser)
-    $http.post('/userguess', this.newUser).success(function(data, status, headers, config){
+    
+     $http.post('/userguess', this.newUser).success(function(data, status, headers, config){
 
     self.newUser = {username: '', numGuess: ''};
     });
-    $state.go('/results');
+    $state.go('results');
   };
 }
