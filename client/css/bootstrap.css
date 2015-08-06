@@ -4,13 +4,29 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
+@font-face {
+    font-family: mkFont;
+    src: url(mk1.ttf);
+}
+
 html {
-  font-family: sans-serif;
+  font-family: mkFont;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
+      margin: 0;
 }
 body {
-  margin: 0;
+  font-family: mkFont;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      margin: 0;
+   background: url('mkLogic.jpg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
 }
 article,
 aside,
@@ -61,7 +77,7 @@ dfn {
 }
 h1 {
   margin: .67em 0;
-  font-size: 2em;
+  font-size: 4em;
 }
 mark {
   color: #000;
@@ -106,7 +122,7 @@ kbd,
 pre,
 samp {
   font-family: monospace, monospace;
-  font-size: 1em;
+  font-size: 2em;
 }
 button,
 input,
@@ -260,17 +276,17 @@ th {
     border: 1px solid #ddd !important;
   }
 }
-@font-face {
+/*@font-face {
   font-family: 'Glyphicons Halflings';
 
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-}
+}*/
 .glyphicon {
   position: relative;
   top: 1px;
   display: inline-block;
-  font-family: 'Glyphicons Halflings';
+  font-family: mkFont;
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -1077,13 +1093,13 @@ th {
           box-sizing: border-box;
 }
 html {
-  font-size: 10px;
+  font-size: 15px;
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-family: mkFont;
+  font-size: 20px;
   line-height: 1.42857143;
   color: #333;
   background-color: #fff;
@@ -6485,7 +6501,7 @@ button.close {
     width: 30px;
     height: 30px;
     margin-top: -15px;
-    font-size: 30px;
+    font-size: 60px;
   }
   .carousel-control .glyphicon-chevron-left,
   .carousel-control .icon-prev {

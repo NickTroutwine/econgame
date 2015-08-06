@@ -1,12 +1,13 @@
 
-<h1>Results</h1>
-<duv ng-bind-html-unsafe="players">Number of players {{players}}</div>
-	</br>
-<button ng-click="docsCtrl.getDocs()">Click for results yo</button>
-	</br>
-<div ng-repeat='result in searchResults'>{{result.node}}</div>
-
-<duv ng-bind-html-unsafe="sum">Winning number: {{sum}}</div>
-<div ng-bind-html-unsafe="winnerName">The Winner Is:  {{winnerName}}</div>
-<div ng-bind-html-unsafe="winnerGuess">With The Winning Number:  {{winnerGuess}}</div>
-
+<h1>Tower of Might</h1>
+<div class="row" style="color: #FFFF00; background-color: black; padding:0em 0.2em 0em 0.2em; display:inline-block; align: right">
+  <div class = 'col-md-6'>
+<!-- <div ng-repeat='roaddogs in players'>{{roaddogs}}</div> -->
+    <div ng-bind-html-unsafe="sum">{{sum}}</div>
+    <div ng-bind-html-unsafe="winnerName">{{winnerName}}</div>
+    <div ng-bind-html-unsafe="winnerGuess">{{winnerGuess}}</div>
+  </div>
+  <div class= 'col-md-6'>
+  <button style="color: black" ng-click="docsCtrl.getDocs()">Tower of Might</button>
+  </div>
+</div>
