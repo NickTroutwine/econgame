@@ -16,6 +16,10 @@
   ],
   "dependencies": {
     "angular": "~1.4.3",
-    "angular-ui-router": "~0.2.15"
+    "angular-ui-router": "~0.2.15",
+    "angular-pusher": "~0.0.14"
+  },
+  "resolutions": {
+    "angular": "~1.2.0"
   }
 }

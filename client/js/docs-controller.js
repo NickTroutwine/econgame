@@ -1,11 +1,21 @@
 angular.module('main').controller('DocsController', DocsController);
-DocsController.$inject = ['$http', '$scope'];
+DocsController.$inject = ['$http', '$scope']; 
+
+// angular.module('myApp', ['doowb.angular-pusher']).
+
+// config(['PusherServiceProvider',
+//   function(PusherServiceProvider) {
+//     PusherServiceProvider
+//     .setToken('your_app_key')
+//     .setOptions({});
+//   }
+// ]);
 
 function DocsController($http, $scope) { 
 var self = this;
 // var dataArray;
 	this.getDocs  = function(){  
-	  var dataArray= []; 
+	  var dataArray= [];  
 	  var numArray = [];
 	  var ansArray = [];
 	  var results;
