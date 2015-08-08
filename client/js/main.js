@@ -23,10 +23,14 @@ angular.module('main', [
     });
   });
 })();
-// window.addEventListener('load', function(){ 
-//   var ws = new WebSocket('ws://localhost:8000');
-//     ws.addEventListener('message',function(event){
-//     //   ws.send("whats up dawg");
-//       console.log(event.data);
-//     })
-// })
+window.addEventListener('load', function(){ 
+  var ws = new WebSocket('ws://localhost:8000');
+  ws.addEventListener('open', function(){
+        ws.send("whats up dawg");
+        console.log("message sent");
+  })
+    
+  ws.addEventListener('message',function(event){
+      console.log(event.data);
+    })
+})

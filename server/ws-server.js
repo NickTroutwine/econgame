@@ -10,8 +10,8 @@ server.on('upgrade', function(request, socket, body) {
     array.push(ws);
     ws.on('message', function(event) {
     	server.broadcast(event.data);
-    	// console.log(event.data);
-     //  ws.send('we got the message');
+    	console.log(event.data);
+      ws.send(event.data);
     });
 
     ws.on('close', function(event) {
@@ -20,7 +20,7 @@ server.on('upgrade', function(request, socket, body) {
       	array.splice(ind,1);
             ws = null;
     });
-    ws.send('you get this');
+    // ws.send('you get this');
   }
 });
 server.broadcast = function(data){

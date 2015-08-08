@@ -38,14 +38,13 @@ app.post('/userguess', function (req, res){
   var newUser = new User(options);
   /*console.log('new user: ', newUser);*/
   newUser.save(function (err, user){
-    console.log("im in");
+    // console.log("im in");
     if(err){
       throw err;
     }
     /*console.log('He has been saved');*/
   });
   res.json({name: newUser.username, guess: newUser.numGuess});  
-console.log(newUser);
 });
 
 app.get('/userguess',function(req,res,next){
@@ -58,31 +57,4 @@ app.use(express.static('client'));
 app.listen(process.env.PORT || 3000);
 module.exports = app;
 
-
-// // server.on('upgrade', function(request, socket, body) {
-// //   if (WebSocket.isWebSocket(request)) {
-// //     var ws = new WebSocket(request, socket, body);
-// //     array.push(ws);
-//     ws.on('message', function(event) {
-//       server.broadcast(event.data);
-//       // console.log(event.data);
-//      //  ws.send('we got the message');
-//     });
-
-//     ws.on('close', function(event) {
-//       console.log('close', event.code, event.reason);
-//         var ind = array.indexOf(ws);
-//         array.splice(ind,1);
-//             ws = null;
-//     });
-//     ws.send('you get this');
-//   }
-// });
-// server.broadcast = function(data){
-//   for(var i=0; i<array.length; i++){
-//     array[i].send(data);
-//   }
-// }
-
-// server.listen(8000);
 

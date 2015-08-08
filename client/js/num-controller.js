@@ -10,7 +10,7 @@ function NumController($http, $state) {
   this.addUser  = function(){   
     $http.post('/userguess', this.newUser).success(function(data, status, headers, config){
     self.newUser = {username: '', numGuess: ''};
-        console.log("sending")
+        // console.log("sending")
 
     });
     $state.go('results');
