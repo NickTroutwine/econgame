@@ -34,13 +34,14 @@ var self = this;
           var winObj = dataArray[i];
           var winnerName =(winObj.username);
           var winnerGuess = (winObj.numGuess);
+          var players = dataArr.length;
           console.log(winnerName, winnerGuess);
         }
       }
       $scope.sum = sum;
       $scope.winnerName = winnerName;
       $scope.winnerGuess = winnerGuess;
-      $scope.players = data;
+      $scope.players = players;
     })                      
   }
 }
