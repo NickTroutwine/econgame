@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express(); 
-var path = require('path');
+var path = require('path')
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var wsServer = require(__dirname + '/ws-server.js');
@@ -8,6 +8,12 @@ var faye = require('faye-websocket');
 /*var http = require('http');
 var httpServer = http.createServer();*/
 var Schema = mongoose.Schema;
+var wsServer = require(__dirname + '/ws-server.js');
+var http = require('http');
+var WebSocket = require("faye-websocket");
+// var server = http.createServer();
+var array = [];
+
 mongoose.connect('mongodb://econgame:econgame@ds059692.mongolab.com:59692/econgame', function(err) {
   if(err){return err;}
 });
@@ -32,15 +38,20 @@ app.get('/results', function (req, res){
 app.post('/userguess', function (req, res){
   var options = {
     username: req.body.username,
-	numGuess: req.body.numGuess
+  numGuess: req.body.numGuess
   };
   var newUser = new User(options);
-  newUser.save(function (err){
-  	if(err){
-  	  throw err;
-  	}
+
+  /*console.log('new user: ', newUser);*/
+  newUser.save(function (err, user){
+    // console.log("im in");
+    if(err){
+      throw err;
+    }
+    /*console.log('He has been saved');*/
+
   });
-  res.json({name: newUser.username, guess: newUser.numGuess});
+  res.json({name: newUser.username, guess: newUser.numGuess});  
 });
 
 app.get('/userguess',function(req,res,next){
@@ -54,3 +65,5 @@ app.use(express.static('client'));
 httpServer.on('upgrade', function(){});*/
 app.listen(process.env.PORT || 3000);
 module.exports = app;
+
+

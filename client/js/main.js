@@ -19,20 +19,20 @@ angular.module('main', [
     })
     $urlRouterProvider.otherwise('/');
     $locationProvider.html5Mode({
-     enabled: true
+       enabled: true
     });
   });
 })();
 
-// window.addEventListener('load', function(){ 
-//  var msg = document.getElementById('message');
-//  var ws = new WebSocket('ws://localhost:8000');
-//  ws.addEventListener('open', function(){
-//   console.log(msg);
-//        var message = msg.value;
-//        ws.send(messsage);
-//  })
-//  ws.addEventListener('message',function(event){
-//      console.log(event.data);
-//    })
-// })
+window.addEventListener('load', function(){ 
+  var ws = new WebSocket('ws://localhost:8000');
+  ws.addEventListener('open', function(){
+        ws.send("whats up dawg");
+        console.log("message sent");
+  })
+    
+  ws.addEventListener('message',function(event){
+      console.log(event.data);
+    })
+})
+
