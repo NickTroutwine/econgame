@@ -14,7 +14,7 @@ var self = this;
       dataArray = data;
       for(var i=0;i<dataArray.length;i++){
         numArray.push(dataArray[i].numGuess);
-        console.log("numArray",numArray);
+        /*console.log("numArray",numArray);*/
       }
       var sum = 0;
       for (var i =0;i<numArray.length;i++){
@@ -24,8 +24,8 @@ var self = this;
       /*console.log("sum",sum);*/
       for(var i=0;i<numArray.length;i++){
         ansArray.push(Math.abs(numArray[i]-sum));
-        console.log("ans",ansArray);
-      }
+/*        console.log("ans",ansArray);
+*/      }
       var answer = ansArray.indexOf(Math.min.apply(Math, ansArray));
       /*console.log("answer",answer);
       console.log(dataArray);*/
