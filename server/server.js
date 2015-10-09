@@ -4,11 +4,10 @@ var path = require('path')
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var Schema = mongoose.Schema;
-var wsServer = require(__dirname + '/ws-server.js');
-var http = require('http');
-var WebSocket = require("faye-websocket");
-// var server = http.createServer();
-var array = [];
+var ws = require('ws').Server,
+   express = require('express'),
+   wss = new ws({port: 8030}),
+   wsarr = [];
 
 mongoose.connect('mongodb://econgame:econgame@ds059692.mongolab.com:59692/econgame', function(err) {
   if(err){return err;}
@@ -47,14 +46,41 @@ app.post('/userguess', function (req, res){
   res.json({name: newUser.username, guess: newUser.numGuess});  
 });
 
+
+
 app.get('/userguess',function(req,res,next){
  User.find({},function(err,data){
    /*console.log('should be DB data',data);*/
    res.send(data);
  });
 });
+
 app.use(express.static('client'));
 app.listen(process.env.PORT || 3000);
 module.exports = app;
 
+//  ws.on("connection", function(ws){
+//   wsarr.push(ws);
+//   for(var i=0; i< wsarr.length: i++){
+//     app.get('/userguess', function(req, res, next){
+//       User.find({},function(err,data){
+//         res.send(data);
+//       })
+//     })
+//   }
+// });
 
+// var ws = require('ws').Server,
+//    express = require('express'),
+//    wss = new ws({port: 8010}),
+//    app = express(),
+//    wsarr = [];
+// wss.on("connection", function(ws){
+//  wsarr.push(ws);
+//  ws.send("from ws server");
+//  ws.on("message", function(msg) {
+//    for(var i = 0; i < wsarr.length; i++) {
+//    wsarr[i].send("message recieved "+msg);
+//  }
+//  })
+// });
