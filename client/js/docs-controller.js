@@ -12,17 +12,17 @@ var self = this;
 	  var ansArray = [];
 	  var results;
 	  /*console.log(this.newUser)*/
-	window.addEventListener('load', function(){ 
-  var ws = new WebSocket('ws://localhost:8030');
-  ws.addEventListener('open', function(){
-        ws.send("whats up dawg");
-        console.log("message sent");
-  })
+// 	window.addEventListener('load', function(){ 
+//   var ws = new WebSocket('ws://localhost:8030');
+//   ws.addEventListener('open', function(){
+//         ws.send("whats up dawg");
+//         console.log("message sent");
+//   })
     
-  ws.addEventListener('message',function(event){
-      console.log(event.data);
-    })
-})
+//   ws.addEventListener('message',function(event){
+//       console.log(event.data);
+//     })
+// })
 	    $http.get('/userguess').success(function(data, status, headers, config){
 	    	dataArray = data;
 		  	for(var i=0;i<dataArray.length;i++){
