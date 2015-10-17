@@ -24,3 +24,17 @@
   });
 })();
 
+<<<<<<< HEAD
+=======
+// window.addEventListener('load', function() {
+//   var ws = new WebSocket('ws://localhost:8000');
+//   ws.addEventListener('open', function() {
+//     ws.send('players');
+//     console.log("message sent");
+//   })
+
+//   ws.addEventListener('message', function(event) {
+//     console.log(event.data);
+//   })
+// })
+>>>>>>> da5c9d6510331d9d78a89263cf80ad18524c1dde

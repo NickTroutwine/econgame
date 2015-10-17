@@ -3,8 +3,10 @@ var app = express();
 var path = require('path')
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+
 var wsServer = require(__dirname + '/ws-server.js');
 var Schema = mongoose.Schema;
+
 
 mongoose.connect('mongodb://econgame:econgame@ds059692.mongolab.com:59692/econgame', function(err) {
   if(err){return err;}
@@ -36,6 +38,10 @@ app.post('/userguess', function (req, res){
     if(err){
       throw err;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> da5c9d6510331d9d78a89263cf80ad18524c1dde
   });
   res.json({name: newUser.username, guess: newUser.numGuess});  
 });
@@ -51,5 +57,3 @@ app.use(express.static('client'));
 httpServer.on('upgrade', function(){});*/
 app.listen(process.env.PORT || 3000);
 module.exports = app;
-
-
