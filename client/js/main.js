@@ -23,14 +23,3 @@ angular.module('main', [
     });
   });
 })();
-window.addEventListener('load', function(){ 
-  var ws = new WebSocket('ws://localhost:8030');
-  ws.addEventListener('open', function(){
-        ws.send("whats up dawg");
-        console.log("message sent");
-  })
-    
-  ws.addEventListener('message',function(event){
-      console.log(event.data);
-    })
-})

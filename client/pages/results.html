@@ -7,10 +7,8 @@
 <div class="row" style="color: #FFFF00; background-color: black; padding:0em 0.2em 0em 0.2em; display:inline-block; float: right; text-align: left">
   <div ng-bind-html-unsafe="players" ># of Opponents: {{players}}</div>
   <h1>Tower of Logic</h1>
-  <div class= 'col-md-6'>
-    <button style="color: black" ng-click="docsCtrl.getDocs()">Who is the Leader?</button>
-  </div>
-  <div class = 'col-md-6' style = "text-align: left">
+
+  <div ng-init="docsCtrl.getDocs()" class = 'col-md-6' style = "text-align: left">
     <div ng-bind-html-unsafe="sum" value= "The Half of All Averages is: ">Average: {{sum}}</div>
     <div ng-bind-html-unsafe="winnerName">Winner: {{winnerName}} </div>
     <div ng-bind-html-unsafe="winnerGuess">With a Guess of: {{winnerGuess}}</div>

@@ -11,18 +11,17 @@ var self = this;
 	  var numArray = [];
 	  var ansArray = [];
 	  var results;
+	  display();
 	  /*console.log(this.newUser)*/
 // 	window.addEventListener('load', function(){ 
-//   var ws = new WebSocket('ws://localhost:8030');
-//   ws.addEventListener('open', function(){
-//         ws.send("whats up dawg");
-//         console.log("message sent");
-//   })
-    
-//   ws.addEventListener('message',function(event){
-//       console.log(event.data);
+//   var ws = new WebSocket('ws://localhost:8030'); 
+//   ws.addEventListener('message',function(){
+//   	ws.send("whats up");
+//   	console.log("message sent");
+//       display();
 //     })
 // })
+function display(){
 	    $http.get('/userguess').success(function(data, status, headers, config){
 	    	dataArray = data;
 		  	for(var i=0;i<dataArray.length;i++){
@@ -58,8 +57,20 @@ var self = this;
 		  	$scope.winnerName = winnerName;
 		  	$scope.winnerGuess = winnerGuess;
 		})
+}
 		  			  	
 	}
 }
 
 
+window.addEventListener('load', function() {
+  var ws = new WebSocket('ws://localhost:8000');
+  ws.addEventListener('open', function() {
+    ws.send("whats up dawg");
+    console.log("message sent");
+  })
+
+  ws.addEventListener('message', function(event) {
+    console.log(event.data);
+  })
+})
