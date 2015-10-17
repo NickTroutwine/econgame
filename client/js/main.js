@@ -24,14 +24,14 @@
   });
 })();
 
-window.addEventListener('load', function() {
-  var ws = new WebSocket('ws://localhost:8000');
-  ws.addEventListener('open', function() {
-    ws.send("whats up dawg");
-    console.log("message sent");
-  })
+// window.addEventListener('load', function() {
+//   var ws = new WebSocket('ws://localhost:8000');
+//   ws.addEventListener('open', function() {
+//     ws.send('players');
+//     console.log("message sent");
+//   })
 
-  ws.addEventListener('message', function(event) {
-    console.log(event.data);
-  })
-})
+//   ws.addEventListener('message', function(event) {
+//     console.log(event.data);
+//   })
+// })

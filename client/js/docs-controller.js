@@ -3,11 +3,22 @@ DocsController.$inject = ['$http', '$scope'];
 
 function DocsController($http, $scope) {
   var self = this;
+
   this.getDocs = function() {
     var dataArray = [],
       numArray = [],
       ansArray = [],
       results;
+	  var ws = new WebSocket('ws://localhost:8000');
+	  ws.addEventListener('open', function() {
+	    ws.send('players');
+	    console.log("message sent");
+	  })
+
+	  ws.addEventListener('message', function(event) {
+	    console.log(event.data);
+	  })
+
     $http.get('/userguess').success(function(data, status, headers, config) {
       dataArray = data;
       for (var i = 0; i < dataArray.length; i++) {
@@ -37,3 +48,14 @@ function DocsController($http, $scope) {
     })
   }
 }
+// window.addEventListener('load', function(){ 
+//   var ws = new WebSocket('ws://localhost:8080');
+//   ws.addEventListener('open', function(){
+//         ws.send("whats up dawg");
+//         console.log("message sent");
+//   })
+    
+//   ws.addEventListener('message',function(event){
+//       console.log(event.data);
+//     })
+// })
