@@ -1,8 +1,8 @@
 {
-  "name": "unit-8sb-express-page",
+  "name": "Econgame",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "an economics game to test logic",
+  "main": "main.js",
   "directories": {
     "test": "test"
   },

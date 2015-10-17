@@ -4,7 +4,6 @@ DocsController.$inject = ['$http', '$scope'];
 function DocsController($http, $scope) {
   var self = this;
 
-
   this.getDocs = function() {
     var dataArray = [],
       numArray = [],
@@ -19,6 +18,7 @@ function DocsController($http, $scope) {
 	  ws.addEventListener('message', function(event) {
 	    console.log(event.data);
 	  })
+
     $http.get('/userguess').success(function(data, status, headers, config) {
       dataArray = data;
       for (var i = 0; i < dataArray.length; i++) {
