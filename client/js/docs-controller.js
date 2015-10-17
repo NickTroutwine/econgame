@@ -3,6 +3,8 @@ DocsController.$inject = ['$http', '$scope'];
 
 function DocsController($http, $scope) {
   var self = this;
+
+
   this.getDocs = function() {
     var dataArray = [],
       numArray = [],

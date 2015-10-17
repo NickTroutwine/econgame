@@ -1,9 +1,7 @@
-/*
 var WebSocket = require("faye-websocket");
 var http = require("http");
 var server = http.createServer();
 var array = [];
-
 
 server.on('upgrade', function(request, socket, body) {
   if (WebSocket.isWebSocket(request)) {
@@ -11,7 +9,7 @@ server.on('upgrade', function(request, socket, body) {
     array.push(ws);
     ws.on('message', function(event) {
     	server.broadcast(event.data);
-    	console.log(event.data);
+    	console.log("event", event);
       ws.send(event.data);
     });
 
@@ -31,4 +29,3 @@ server.broadcast = function(data){
 }
 
 server.listen(8000);
-*/

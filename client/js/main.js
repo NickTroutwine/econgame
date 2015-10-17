@@ -27,7 +27,7 @@
 window.addEventListener('load', function() {
   var ws = new WebSocket('ws://localhost:8000');
   ws.addEventListener('open', function() {
-    ws.send("whats up dawg");
+    ws.send('players');
     console.log("message sent");
   })
 
