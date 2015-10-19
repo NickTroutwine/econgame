@@ -38,10 +38,7 @@ app.post('/userguess', function (req, res){
     if(err){
       throw err;
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> da5c9d6510331d9d78a89263cf80ad18524c1dde
   });
   res.json({name: newUser.username, guess: newUser.numGuess});  
 });
